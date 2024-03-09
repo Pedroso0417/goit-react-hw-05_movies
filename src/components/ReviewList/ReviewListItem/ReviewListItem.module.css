@@ -1,0 +1,16 @@
+
+
+.reviewListItem {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.author {
+  font-weight: bold;
+  color: #007bff;
+}
+
+.content {
+  color: #555;
+}

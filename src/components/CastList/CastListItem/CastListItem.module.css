@@ -1,0 +1,26 @@
+.CastListItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.CastImage {
+  max-width: 100px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.CastInfo {
+  flex-grow: 1;
+}
+
+.CastName {
+  font-weight: bold;
+  margin: 0;
+}
+
+.CastCharacter {
+  margin: 0;
+}
+
+/* Add more styles as needed for other elements */

@@ -1,0 +1,18 @@
+
+.movieList {
+  padding: 20px;
+}
+
+.movieList h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.movieList ul {
+  list-style: none;
+  padding: 0;
+}
+
+.movieList li {
+  margin-bottom: 8px;
+}

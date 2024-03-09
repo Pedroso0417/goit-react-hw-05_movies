@@ -1,0 +1,33 @@
+
+.Header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Logo a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.Nav ul {
+  list-style: none;
+  display: flex;
+}
+
+.Nav li {
+  margin-right: 20px;
+}
+
+.Nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Add more styles as needed for other elements */
