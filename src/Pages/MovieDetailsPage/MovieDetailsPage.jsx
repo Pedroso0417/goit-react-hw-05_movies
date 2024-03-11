@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import CastList from './MovieDetailsPage'; // Adjust the import path based on your project structure
+import CastList from 'components/CastList/CastList';// Adjust the import path based on your project structure
 import { fetchMovieDetails } from '../../themoviedb-api'; // Adjust the import path based on your project structure
 import css from './MovieDetailsPage.module.css';
 
@@ -38,7 +38,7 @@ const MovieDetailsPage = () => {
     <div className={css.container}>
       {/* Display other movie details here */}
       <h1>Movie Details Page</h1>
-      <CastList cast={movieDetails.cast} />
+      <CastList idMovie={movieDetails.cast} />
     </div>
   );
 };
