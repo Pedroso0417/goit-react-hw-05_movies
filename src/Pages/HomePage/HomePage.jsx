@@ -9,6 +9,7 @@ const HomePage = () => {
     const fetchData = async () => {
       try {
         const movies = await fetchTrendingMovies();
+        console.log(movies)
         setTrendingMovies(movies);
       } catch (error) {
         console.error('Error fetching trending movies:', error);
@@ -22,11 +23,11 @@ const HomePage = () => {
     <div>
       <h1>Trending Movies</h1>
       <ul>
-        {trendingMovies.map(movie => (
-          <li key={movie.id}>
-            <Link to={`/movies/${movie.id}`}>{movie.title}</Link>
+        {trendingMovies.map((mov) => 
+          <li key={mov.id}>
+            <Link to={`/movies/${mov.id}`} style={{color:"black"}}>{mov.title}</Link>
           </li>
-        ))}
+        )}
       </ul>
     </div>
   );

@@ -4,7 +4,7 @@ import { fetchMovieReviews } from '../../themoviedb-api'; // Adjust the import p
 import css from './ReviewList.module.css'; // Adjust the import path based on your project structure
 import ReviewListItem from './ReviewListItem/ReviewListItem';
 
-const ReviewList = ({ movieId }) => {
+const ReviewList = ({ idMovie }) => {
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -12,7 +12,7 @@ const ReviewList = ({ movieId }) => {
   useEffect(() => {
     const fetchReviewData = async () => {
       try {
-        const reviewData = await fetchMovieReviews(movieId);
+        const reviewData = await fetchMovieReviews(idMovie);
         setReviews(reviewData);
         setLoading(false);
       } catch (error) {
@@ -23,7 +23,7 @@ const ReviewList = ({ movieId }) => {
     };
 
     fetchReviewData();
-  }, [movieId]);
+  }, [idMovie]);
 
   if (loading) {
     return <div>Loading review data...</div>;
@@ -37,7 +37,7 @@ const ReviewList = ({ movieId }) => {
     <div className={css.container}>
       <h2>Reviews</h2>
       <ul className={css.reviewlist}>
-        {reviews.map(({ id, review, author, content }) => (
+        {reviews.slice(0,4).map(({ id, review, author, content }) => (
           <ReviewListItem
             key={id}
             review={review}
@@ -51,7 +51,7 @@ const ReviewList = ({ movieId }) => {
 };
 
 ReviewList.propTypes = {
-  movieId: PropTypes.string.isRequired,
+  idMovie: PropTypes.string.isRequired,
 };
 
 export default ReviewList;

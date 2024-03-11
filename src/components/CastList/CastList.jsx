@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { fetchMovieCast } from '../../themoviedb-api'; // Adjust the import path based on your project structure
 import css from './CastList.module.css';
 
-const CastList = ({ movieId }) => {
+const CastList = ({ idMovie }) => {
   const [cast, setCast] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -11,7 +11,7 @@ const CastList = ({ movieId }) => {
   useEffect(() => {
     const fetchCastData = async () => {
       try {
-        const castData = await fetchMovieCast(movieId);
+        const castData = await fetchMovieCast(idMovie);
         setCast(castData);
         setLoading(false);
       } catch (error) {
@@ -22,7 +22,7 @@ const CastList = ({ movieId }) => {
     };
 
     fetchCastData();
-  }, [movieId]);
+  }, [idMovie]);
 
   if (loading) {
     return <div>Loading cast data...</div>;
@@ -36,7 +36,7 @@ const CastList = ({ movieId }) => {
     <div className={css.container}>
       <h2>Cast</h2>
       <ul>
-        {cast.map(castMember => (
+        {cast.slice(0,5).map(castMember => (
           <li key={castMember.id}>
             <img
               src={`https://image.tmdb.org/t/p/w185${castMember.profile_path}`}
@@ -52,7 +52,7 @@ const CastList = ({ movieId }) => {
 };
 
 CastList.propTypes = {
-  movieId: PropTypes.string.isRequired,
+  idMovie: PropTypes.string.isRequired,
 };
 
 export default CastList;

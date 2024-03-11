@@ -2,11 +2,11 @@ import PropTypes from 'prop-types';
 import css from './MovieListItem.module.css';
 
 const MovieListItem = ({ movie }) => {
-  const { title, releaseDate, overview } = movie;
+  const { title, release_date, overview } = movie;
   return (
     <div className={css.MovieListItem}>
-      <h3>{title}</h3>
-      <p> Release Date:{releaseDate} </p>
+      <h1>{title}</h1>
+      <p> Release Date: {release_date} </p>
       <p>{overview}</p>
     </div>
   );
